@@ -4,4 +4,3 @@ letters= ['w','x','y','z']
 for letter in letters:
     print(letter)
     
-
