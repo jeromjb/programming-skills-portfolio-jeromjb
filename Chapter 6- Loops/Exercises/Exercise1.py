@@ -7,9 +7,10 @@ pizza_toppings = []
 
 while True:
     topping = input("Enter a pizza or 'quit' to finish:")
-
-if topping.lower() == 'quit':
-    breakpoint
+    
+    if topping.lower() == 'quit':
+        break
+   
  
 
 pizza_toppings.append(topping)
