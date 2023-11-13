@@ -21,4 +21,3 @@ new_guest = "Sheehan"
 print ("Invitation update")
 for guest in guests:
   print (f"Dear {guest}, you are invited for dinner. Would you like to come?")
-  
