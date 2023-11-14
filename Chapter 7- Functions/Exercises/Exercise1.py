@@ -8,5 +8,4 @@ function, and make sure the message displays correctly.
 def display_message():
     msg = "Hi, I am Jerom!  "
     print (msg)
-
 display_message()
