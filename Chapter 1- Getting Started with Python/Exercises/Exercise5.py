@@ -1,4 +1,5 @@
-#Write a Python program which accepts the radius of a circle from the user and compute the area.
+'''Write a Python program which accepts 
+the radius of a circle from the user and compute the area.'''
 
 import math 
 r= input ("Enter the radius of the circle:")
