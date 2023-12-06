@@ -1,4 +1,3 @@
-#3
 items = {
     'item1': {
         'category': 'Milk & Bevs',
@@ -8,14 +7,14 @@ items = {
         'stock': 12
     },
     'item2': {
-        'category': 'Packed',
+        'category': 'Snacks',
         'name': 'Larabar',
         'code': 102,
         'price': 10,
         'stock': 20
     },
     'item3': {
-        'category': 'Juices',
+        'category': 'Drinks',
         'name': 'Mango Punch',
         'code': 103,
         'price': 13,
