@@ -43,3 +43,21 @@ print("Code:", items['item3']['code'])
 print("Price:", items['item3']['price'])
 print("Stock:", items['item3']['stock']) 
 
+balance = 0.0
+
+def insert_money (items):
+    while True:
+        try:
+            amount = float(input("Insert money or press 0 to cancel"))
+            if amount == 0:
+                print ("Transaction cancelled. Returning to main menu.")
+                break
+            elif amount < 0:
+                print ("Invalind amount. PLease insert a valid amount")
+            else:
+                balance += amount
+                print (f"Current balance: {balance:.2f}")
+                break
+        except ValueError:
+            print ("Invalid input. Please enter a valid amount")
+            
