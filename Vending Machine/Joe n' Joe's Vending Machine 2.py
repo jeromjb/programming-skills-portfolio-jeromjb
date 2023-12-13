@@ -1,3 +1,8 @@
+print ('''__      __   _                    _            _                 _      _          _    
+\ \    / /__| |__ ___ _ __  ___  | |_ ___   _ | |___  ___   _ _ ( )  _ | |___  ___( )___
+ \ \/\/ / -_) / _/ _ \ '  \/ -_) |  _/ _ \ | || / _ \/ -_) | ' \|/  | || / _ \/ -_)/(_-<
+  \_/\_/\___|_\__\___/_|_|_\___|  \__\___/  \__/\___/\___| |_||_|    \__/\___/\___| /__/''')
+
 items = {
     'item1': {
         'category': 'Milk & Bevs',
@@ -24,7 +29,6 @@ items = {
     
 }
 
-
 print("Category:", items['item1']['category'])
 print("Name:", items['item1']['name'])
 print("Code:", items['item1']['code'])
@@ -43,21 +47,32 @@ print("Code:", items['item3']['code'])
 print("Price:", items['item3']['price'])
 print("Stock:", items['item3']['stock']) 
 
-balance = 0.0
 
-def insert_money (items):
-    while True:
+
+print("Please select an item:")
+for key, item in items.items():
+    print(f"{key}. {item['name']} - Dhs {item['price']}")
+
+choice = input("Enter the item no. you wish for...")
+
+if choice in items:
+    choice_item = items [choice]
+    print ("Your item is {choice_item['name']}.")
+    amount = choice_item['price']
+
+    while amount > 0:
         try:
-            amount = float(input("Insert money or press 0 to cancel"))
-            if amount == 0:
-                print ("Transaction cancelled. Returning to main menu.")
+            payment = float(input(f"Please insert Dhs {amount:.2f}: "))
+            if payment >= amount:
+                balance = payment - amount
+                print(f"Thank you for purchasing! Your balance is ${balance:.2f}.")
                 break
-            elif amount < 0:
-                print ("Invalind amount. PLease insert a valid amount")
             else:
-                balance += amount
-                print (f"Current balance: {balance:.2f}")
-                break
+                print("Insufficient payment. Please insert more money.")
+                amount -= payment
         except ValueError:
-            print ("Invalid input. Please enter a valid amount")
-            
+            print("Invalid payment amount. Please enter a valid number.")
+else:
+    print("Invalid selection. Please try again.")
+
+
